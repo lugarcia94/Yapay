@@ -9,6 +9,13 @@ class RemoveUser extends Component {
             this.setState({ list })
         })
     }
+    render() {
+        return (
+            <div>
+                teste
+            </div>
+        );
+    }
 }
 
 export default RemoveUser

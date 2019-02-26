@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { apiAction } from '../actions/action'  
 import trash from '../assets/img/trash.png'
-import RemoveUser from '../components/RemoveUser'
+//import RemoveUser from '../components/RemoveUser'
 
 class ListUsers extends Component {
 
@@ -25,7 +25,7 @@ class ListUsers extends Component {
                                 <span className="users__list-phone">{item.phone}</span> 
                             </div>
                             <span className="users__list-id">{item.id}</span>
-                            <button className="remove__item" onClick={() => this.RemoveUser(item.id)}><img src={trash}/></button>
+                            <button className="remove__item"><img src={trash} alt="Remover"/></button>
                         </li>                 
                 ))}
                 </ul>
