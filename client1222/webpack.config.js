@@ -25,7 +25,7 @@ module.exports = {
         loaders: "babel-loader",
         options: {
           presets: ["react", "stage-0", "es2015"],
-          plugins: ["transform-class-properties", "transform-decorators-legacy"]
+          plugins: ["transform-class-properties", "transform-decorators-legacy", ["@babel/plugin-transform-regenerator", { "asyncGenerators": false, "generators": false, "async": false}]]
         }
       }
     ]
@@ -34,11 +34,14 @@ module.exports = {
     contentBase: "./public/",
     watchContentBase: true
   },
+
+  
   plugins: [
     new ExtractTextPlugin("bundle.css"),
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify("production")
     }),
+    
     new webpack.optimize.UglifyJsPlugin()
   ]
 };

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/bundle.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <title>React-Redux-Sass Starter</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="/bundle.js"></script>
+
+  <script>
+      jQuery('#name-user').keyup(function(){
+      let word = jQuery(this).val().toLowerCase();
+    
+     jQuery('.users__list li').each(function(){
+         let title = jQuery('.users__list-name', this).text();
+    
+          if(title.toLowerCase().indexOf(word) == -1){  
+              jQuery(this).attr('aria-hidden', true);
+              jQuery(this).addClass('removeItem');
+          } else {              
+              jQuery(this).attr('aria-hidden', false);
+              jQuery(this).removeClass('removeItem');
+          }
+     });
+    
+    });
+  </script>
+
+</body>
+</html>
+
