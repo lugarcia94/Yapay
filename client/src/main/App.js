@@ -12,9 +12,7 @@ class App extends Component {
           <Header/>
           <Button/>
           <Search/>
-          <div className="content__users-list">
-            <ListUsers/>
-          </div>
+          <ListUsers/> 
       </div>
     );
   }
