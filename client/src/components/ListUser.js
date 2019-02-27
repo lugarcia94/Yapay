@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux' 
 import { bindActionCreators } from 'redux'
-import { apiAction } from '../actions/action'  
+import { apiAction, DeleteItem } from '../actions/action'  
 import trash from '../assets/img/trash.png'
 //import RemoveUser from '../components/RemoveUser'
 
@@ -11,7 +11,11 @@ class ListUsers extends Component {
         this.props.apiAction(); 
     }
 
-    render() {
+    removeItem(id) {
+        this.props.DeleteItem(id);
+    }
+
+    render() { 
         return (
             <div className="content__users-list"> 
                 <ul className="users__list"> 
@@ -25,7 +29,7 @@ class ListUsers extends Component {
                                 <span className="users__list-phone">{item.phone}</span> 
                             </div>
                             <span className="users__list-id">{item.id}</span>
-                            <button className="remove__item"><img src={trash} alt="Remover"/></button>
+                            <button className="remove__item" onClick={()=>this.removeItem(item.id)}><img src={trash} alt="Remover"/></button>
                         </li>                 
                 ))}
                 </ul>
@@ -34,6 +38,6 @@ class ListUsers extends Component {
     }
 }
 
-const mapStateToProps = state => ({listDb:state.retornoDb})
-const mapDispatchToProps = dispatch => bindActionCreators({apiAction}, dispatch) 
+const mapStateToProps = state => ({listDb:state.retornoDb, isRemoved:state.isRemoved})
+const mapDispatchToProps = dispatch => bindActionCreators({apiAction, DeleteItem}, dispatch) 
 export default connect(mapStateToProps, mapDispatchToProps)(ListUsers)

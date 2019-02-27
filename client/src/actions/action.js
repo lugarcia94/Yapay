@@ -9,6 +9,26 @@ export const apiAction  =  () => {
         type: 'Api_data',
         payload: response      
     } 
+
 }
- 
+
+export const DeleteItem = (id) => {
+    return (dispatch) => {
+        dispatch(itemRemove(true))
+
+        const request = axios.delete(baseUrl, {
+            data: { id }
+        })  
+
+        dispatch(itemRemove(false))
+    }
+
+}
+
+export function itemRemove(bool) {     
+    return {         
+        type: 'REMOVE_ITEM',         
+        isRemoved: bool     
+    } 
+}
   
