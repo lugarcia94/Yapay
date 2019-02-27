@@ -121,6 +121,7 @@ body {
       opacity: 0;
       visibility: hidden; 
       transition: all 150ms ease-in-out; 
+      border: none;
 
       @media(max-width: 768px) {
         height: auto;

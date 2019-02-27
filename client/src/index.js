@@ -5,6 +5,7 @@ import { applyMiddleware, createStore } from 'redux'
 import rootReducer from './main/reducers' 
 import App from './main/App'
 import promise from 'redux-promise'
+import thunk from 'redux-thunk'
 
 const store = applyMiddleware(promise)(createStore)(rootReducer)
 
