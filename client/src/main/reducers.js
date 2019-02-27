@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux'  
-import Api_data from '../reducers/reducer'
+import { apiData, removeItem } from '../reducers/reducer'
 
 export default combineReducers({   
-    retornoDb: Api_data
+    retornoDb: apiData,
+    removeItem
 })
 

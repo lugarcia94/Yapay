@@ -1,14 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Leanne Graham",
-      "username": "Leanne",
-      "email": "Sincere@april.biz",
-      "phone": "(11) 1234-5676",
-      "avatar": "https://randomuser.me/api/portraits/men/82.jpg"
-    },
-    {
       "id": 2,
       "name": "Ervin Howell",
       "username": "Ervin",

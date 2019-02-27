@@ -11,7 +11,8 @@ class ListUsers extends Component {
         this.props.apiAction(); 
     }
 
-    removeItem(id) {
+    removeItem = (id) => {
+        // console.log(this.props);
         this.props.DeleteItem(id);
     }
 
@@ -29,7 +30,7 @@ class ListUsers extends Component {
                                 <span className="users__list-phone">{item.phone}</span> 
                             </div>
                             <span className="users__list-id">{item.id}</span>
-                            <button className="remove__item" onClick={()=>this.removeItem(item.id)}><img src={trash} alt="Remover"/></button>
+                            <button className="remove__item" onClick={ () => this.removeItem(item.id) }><img src={trash} alt="Remover"/></button>
                         </li>                 
                 ))}
                 </ul>
@@ -38,6 +39,6 @@ class ListUsers extends Component {
     }
 }
 
-const mapStateToProps = state => ({listDb:state.retornoDb, isRemoved:state.isRemoved})
+const mapStateToProps = state => ({listDb:state.retornoDb, isRemoved:state.removeItem})
 const mapDispatchToProps = dispatch => bindActionCreators({apiAction, DeleteItem}, dispatch) 
 export default connect(mapStateToProps, mapDispatchToProps)(ListUsers)
