@@ -6,8 +6,9 @@ import rootReducer from './main/reducers'
 import App from './main/App'
 import promise from 'redux-promise'
 import thunk from 'redux-thunk'
+import multi from 'redux-multi'
 
-const store = applyMiddleware(promise)(createStore)(rootReducer)
+const store = applyMiddleware(multi, thunk, promise)(createStore)(rootReducer)
 
 render(
     <Provider store={store}>     

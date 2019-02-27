@@ -1,9 +1,8 @@
-import axios from 'axios';
-const baseUrl = 'http://localhost:9004/users'
+import api from '../services/api';
 
 export const apiAction  =  () => {  
     
-    const response = axios(baseUrl)
+    const response = api.get('/users');
  
     return{         
         type: 'Api_data',
@@ -13,16 +12,10 @@ export const apiAction  =  () => {
 }
 
 export const DeleteItem = (id) => {
-    return (dispatch) => {
+    return  dispatch => {
         dispatch(itemRemove(true))
-
-        const request = axios.delete(baseUrl, {
-            data: { id }
-        })  
-
-        dispatch(itemRemove(false))
+        api.delete('/users/' + id).then(() => dispatch(itemRemove(false)));
     }
-
 }
 
 export function itemRemove(bool) {     
