@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { apiAction, DeleteItem } from '../actions/action'  
 import trash from '../assets/img/trash.png'
-//import RemoveUser from '../components/RemoveUser'
 
 class ListUsers extends Component {
 
